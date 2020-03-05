@@ -48,6 +48,9 @@
         img {
           border-radius: 50%;
         }
+        .form-control{
+            color: #A2A2A2;
+        }
         
     </style>
 </head>
@@ -109,18 +112,20 @@
 </nav>
 
 
-
+<!-- data-ride="carousel"-->
     <h2 style="text-align: center;">Employee Information</h2><br>
-  <div id="myCarousel" class="carousel slide jumbotron center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide jumbotron center">
     <!-- Indicators -->
+<!--
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
+-->
 
     <!-- Wrapper for slides -->
-<form method="post" action="/create">
+<form method="post" action="/form_access">
     {% csrf_token %}
     <div class="carousel-inner">
       <div class="item active">
@@ -130,28 +135,60 @@
                 <td colspan="1">
                    <div class="well form-horizontal">
                       <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">ID. No.</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span>
+                                    
+                                        <select id="company" class="form-control">
+                                          <option>small</option>
+                                          <option>medium</option>
+                                          <option>large</option>
+                                        </select> 
+                                     
+                                </div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Seq. No.</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="SEQ_NO" placeholder="Seq. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Title</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="TITLE" placeholder="Title" class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">First Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">First Name</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Middle Name</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="MiddleName" name="MIDDLE_NAME" placeholder="MiddleName" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="MiddleName" name="MIDDLE_NAME" placeholder="MiddleName" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Last Name</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="LastName" name="LAST_NAME" placeholder="LastName" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="LastName" name="LAST_NAME" placeholder="LastName" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Father Name</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="fathername" name="FATHER_NAME" placeholder="fathername" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="fathername" name="FATHER_NAME" placeholder="fathername" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
 
@@ -174,7 +211,7 @@
                          <div class="form-check">
                           <label class="col-md-4 control-label">Gender</label>
                             <div class="col-md-8 inputGroupContainer">
-                              <input type="radio" class="form-check-input" name="GENDER" value="Male" checked>
+                              <input type="radio" class="form-check-input" name="GENDER" value="Male">
                               <label class="form-check-label" for="Gender">Male</label><br>
                               <input type="radio" class="form-check-input" name="GENDER" value="Female">
                               <label class="form-check-label" for="Gender">Female</label><br>
@@ -188,9 +225,9 @@
                             <div class="col-md-8 inputGroupContainer">
                           
                           <label class="form-check-label" for="T.A.">Yes</label>
-                                <input type="radio" class="form-check-input" name="TA" id="T.A." value=True >
+                                <input type="radio" class="form-check-input" name="TA" id="T.A." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="TA" id="T.A." value=False checked>
+                                <input type="radio" class="form-check-input" name="TA" id="T.A." value=False>
                             </div>
                         </div>
 
@@ -202,7 +239,7 @@
                           <label class="form-check-label" for="T.A.">Yes</label>
                                 <input type="radio" class="form-check-input" name="PT" id="P.T." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="PT" id="P.T." value=False checked>
+                                <input type="radio" class="form-check-input" name="PT" id="P.T." value=False>
                             </div>
                         </div>
 
@@ -217,7 +254,7 @@
                                 <label class="form-check-label" for="T.A.">Yes</label>
                                 <input type="radio" class="form-check-input" name="QUARTER" id="T.A." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="QUARTER" id="T.A." value=False checked>
+                                <input type="radio" class="form-check-input" name="QUARTER" id="T.A." value=False>
                             </div>
                         </div>
 
@@ -232,7 +269,7 @@
                                 <label class="form-check-label" for="T.A.">Yes</label>
                                 <input type="radio" class="form-check-input" name="RENT_FREE" id="T.A." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="RENT_FREE" id="T.A." value=False checked>
+                                <input type="radio" class="form-check-input" name="RENT_FREE" id="T.A." value=False>
                               </div>
                         </div>
 
@@ -241,7 +278,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Quarter Address.</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="qraddress" name="QUARTER_ADDRESS" placeholder="Quarter Address" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="qraddress" name="QUARTER_ADDRESS" placeholder="Quarter Address" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
 
@@ -256,7 +293,7 @@
                                 <label class="form-check-label" for="T.A.">Yes</label>
                                 <input type="radio" class="form-check-input" name="HANDICAP" id="T.A." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="HANDICAP" id="T.A." value=False checked>
+                                <input type="radio" class="form-check-input" name="HANDICAP" id="T.A." value=False>
                             </div>
                         </div>
 
@@ -271,7 +308,7 @@
                                 <label class="form-check-label" for="T.A.">Yes</label>
                                 <input type="radio" class="form-check-input" name="SENIOR_CITIZEN" id="T.A." value=True>
                           <label class="form-check-label" for="T.A.">No</label>
-                                <input type="radio" class="form-check-input" name="SENIOR_CITIZEN" id="T.A." value=False checked>
+                                <input type="radio" class="form-check-input" name="SENIOR_CITIZEN" id="T.A." value=False>
                             </div>
                         </div>
 
@@ -295,28 +332,38 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Bank Account No.</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="bankaccno" name="BANK_ACCOUNT_NUMBER" placeholder="Bank Account No." class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="bankaccno" name="BANK_ACCOUNT_NUMBER" placeholder="Bank Account No." class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">P.F. No.</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="pfno" name="PF_NUMBER" placeholder="P.F. No" class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="pfno" name="PF_NUMBER" placeholder="P.F. No" class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Pran No.</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="Pran No." name="PRAN_NUMBER" placeholder="Pran No." class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="Pran No." name="PRAN_NUMBER" placeholder="Pran No." class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Pan No.</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="PAN_NUMBER" placeholder="Pan No." class="form-control"  value="" type="text" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="panno" name="PAN_NUMBER" placeholder="Pan No." class="form-control"  value="" type="text"></div>
                             </div>
                          </div>
-
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Under</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span>
+                                    <select class="form-control">
+                                        <option>OPTIONS</option>
+                                   </select>
+                                </div>
+                            </div>
+                         </div>
+                          
                       </fieldset>
                    </div>
                 </td>
@@ -336,32 +383,32 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Increment Date</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="incrementdate" name="INCREMENT_DATE" class="form-control"  type="date" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="incrementdate" name="INCREMENT_DATE" class="form-control"  type="date"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Date Of Birth</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="dateofbirth" name="DATE_OF_BIRTH" class="form-control" type="date" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="dateofbirth" name="DATE_OF_BIRTH" class="form-control" type="date"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Date Of Joining</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="dateofjoining" name="DATE_OF_JOINING" class="form-control"  type="date" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="dateofjoining" name="DATE_OF_JOINING" class="form-control"  type="date"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Date Of Retirement</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="dateofretirement" name="DATE_OF_RETIREMENT" class="form-control" type="date" required></div>
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="dateofretirement" name="DATE_OF_RETIREMENT" class="form-control" type="date"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Designation Name</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group">
-                                    <select class="mdb-select md-form" name="DESIGNATION_NATURE" required>
+                                    <select class="mdb-select md-form form-control" name="DESIGNATION_NATURE">
                                         {% for i in designation_nature %}
                                             <option value="{{i.NAME}}">{{i.NAME}}</option>
                                         {% endfor %}
@@ -390,7 +437,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Designation</label>
                             <div class="col-md-8 inputGroupContainer">
-                               <select class="mdb-select md-form" name="DESIGNATION" required>
+                               <select class="mdb-select md-form form-control" name="DESIGNATION">
                                 {% for i in designation %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -401,7 +448,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Department</label>
                             <div class="col-md-8 inputGroupContainer">
-                              <select class="mdb-select md-form" name="DEPARTMENT" required>
+                              <select class="mdb-select md-form form-control" name="DEPARTMENT">
                                 {% for i in department %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -412,7 +459,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Staff Type</label>
                                <div class="col-md-8 inputGroupContainer">
-                               <select class="mdb-select md-form" name="STAFF_TYPE" required>
+                               <select class="mdb-select md-form form-control" name="STAFF_TYPE">
                                 {% for i in staff_type %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -423,7 +470,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Vacational</label>
                                <div class="col-md-8 inputGroupContainer">
-                               <select class="mdb-select md-form" name="VACATIONAL" required>
+                               <select class="mdb-select md-form form-control" name="VACATIONAL">
                                 {% for i in vacational %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -434,7 +481,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Appointment</label>
                                <div class="col-md-8 inputGroupContainer">
-                               <select class="mdb-select md-form" name="APPOINTMENT" required>
+                               <select class="mdb-select md-form form-control" name="APPOINTMENT">
                                 {% for i in appointment %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -445,7 +492,7 @@
                          <div class="form-group">
                             <label class="col-md-4 control-label">Bank Name</label>
                                <div class="col-md-8 inputGroupContainer">
-                               <select class="mdb-select md-form" name="BANK_NAME" required>
+                               <select class="mdb-select md-form form-control" name="BANK_NAME">
                                 {% for i in bank_name %}
                                     <option value="{{i.NAME}}">{{i.NAME}}</option>
                                 {% endfor %}
@@ -455,7 +502,7 @@
                         
                         
 
-                         <button type="submit" class="btn btn-default spacing ">Submit</button>
+                         
                          <!--
                        <button type="submit" class="btn btn-default spacing">Modify</button>
                        <button type="submit" class="btn btn-default spacing">Cancel</button>
@@ -472,17 +519,85 @@
           </tbody>
        </table>
       </div>
-    </div>
-</form>
-      <div>
-         {% for message in messages %}
-         <h1>{{message}}</h1>
-         {% endfor %}
-         
-      </div>
+        <div class="item">
+        <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Level</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="ID_NO" placeholder="ID. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Basic</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="SEQ_NO" placeholder="Seq. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Pay Status</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="TITLE" placeholder="Title" class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Rule</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+<!--
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Remarks</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text"></div>
+                            </div>
+                            
+                         </div>
+-->
 
+                      </fieldset>
+                   </div>
+                </td>
+
+             </tr>
+          </tbody>
+       </table>
+      </div>
+        <div class="item">
+        <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                         <div class="form-group">
+                            <label class="col-md-2 control-label">Remarks</label>
+                            <div class="col-md-10 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="FIRST_NAME" placeholder="First Name" class="form-control"  value="" type="text"></div>
+                            </div>
+                            
+                         </div>
+                         <button type="submit" class="btn btn-success spacing" style="float: right;">Submit</button>
+
+                      </fieldset>
+                   </div>
+                </td>
+
+             </tr>
+          </tbody>
+       </table>
+      </div>
+    </div>
+    
+</form>
 
     <!-- Left and right controls -->
+<!--
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
@@ -491,16 +606,141 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
-      <button type="button" class="btn btn-default" onclick="plusSlides(-1)">Prev</button>
-      <button type="button" class="btn btn-default" onclick="plusSlides(1)" style="float: right;">Next</button>
+-->
+      <div class="row">
+          <div class="col-sm-3">
+          <button type="button" class="btn btn-default btn-block" onclick="plusSlides(-1)">Prev</button>
+          </div>
+          <div class="col-sm-3">
+          <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal">Views</button>
+          </div>
+          <div class="col-sm-3">
+          <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal2">Modify</button>
+              </div>
+
+          <div class="col-sm-3">
+          <button type="button" class="btn btn-default btn-block" onclick="plusSlides(1)" style="float: right;">Next</button>
+              </div>
+      </div>
   </div>
 
 <br>
     <br>
+    
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <!--            FORM IS HERE-->
+                    <form action="" method="post">
+                        <table class="table table-striped">
+                          <tbody>
+                             <tr>
+                                 <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                        <div class="form-group" style="margin-bottom:20px; ">
+                            <label class="col-md-2 control-label">ID. No.</label>
+                            <div class="col-md-10 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="ID_NO" placeholder="ID. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                        <br>
+                          <div class="form-group" style="margin-bottom:20px; ">
+                            <label class="col-md-2 control-label">Seq. No.</label>
+                            <div class="col-md-10 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="SEQ_NO" placeholder="Seq. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-9 inputGroupContainer"></div>
+                            <div class="col-md-3 inputGroupContainer">
+                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                            </div>
+                        </div>
+                       </fieldset>
+                                     </div>
+                                 </td>
+                        
+                              </tr>
+                            </tbody>
+                        </table>
+                    </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+<!--            FORM IS HERE-->
+                    <form action="" method="post">
+                        <table class="table table-striped">
+                          <tbody>
+                             <tr>
+                                 <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                        <div class="form-group" style="margin-bottom:20px; ">
+                            <label class="col-md-2 control-label">ID. No.</label>
+                            <div class="col-md-10 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="ID_NO" placeholder="ID. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                        <br>
+                          <div class="form-group" style="margin-bottom:20px; ">
+                            <label class="col-md-2 control-label">Seq. No.</label>
+                            <div class="col-md-10 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span><input id="FirstName" name="SEQ_NO" placeholder="Seq. No." class="form-control"  value="" type="text"></div>
+                            </div>
+                         </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-9 inputGroupContainer"></div>
+                            <div class="col-md-3 inputGroupContainer">
+                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                            </div>
+                        </div>
+                       </fieldset>
+                                     </div>
+                                 </td>
+                        
+                              </tr>
+                            </tbody>
+                        </table>
+                    </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
 <footer class="page-footer font-small black">
 
   <!-- Copyright -->
-  <div style="color: white;" class="footer-copyright text-center py-10">? 2021 Batch Copyright:
+  <div style="color: white;" class="footer-copyright text-center py-10">2021 Batch Copyright:
     <a href="https://vnit.ac.in"> VNIT Portal</a>
   </div>
   <!-- Copyright -->
