@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-control.left, .carousel-control.right {
+           background-image:none !important;
+           filter:none !important;
+        }
+        .center{
+          margin: auto;
+        }
+        .jumbotron{
+         width:60%;
+         height:60%;
+        }
+        
+        .btun button{
+            margin-bottom: 5px;
+        }
+        .carousel{
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Carousel Example</h2>
+    <div class="btun" style="text-align:center;padding: 10px;">
+    
+      <button type="button" class="btn btn-info b" onclick="currentSlide(1)">Main Department</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(2)">Sub Department</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(3)">Main Designation</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(4)">Sub Designation</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(5)">Scale</button> <br>
+        
+      <button type="button" class="btn btn-info b my-3" onclick="currentSlide(6)">Staff</button> 
+
+      <button type="button" class="btn btn-info b" onclick="currentSlide(7)">Qualification Level</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(8)">Caste</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(9)">Category</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(10)">Religion</button>
+
+      <button type="button" class="btn btn-info b" onclick="currentSlide(11)">Appointment</button> <br>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(12)">Supplimentary Head</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(13)">Bank</button> 
+      <button type="button" class="btn btn-info b" onclick="currentSlide(14)">City </button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(15)">Title</button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(16)">Transaction Type</button><br>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(17)">Nature Of Designation</button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(18)">Under College</button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(19)">G.P.F. Loan Head</button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(20)">Staff Type</button>
+      <button type="button" class="btn btn-info b" onclick="currentSlide(21)">Installment Bank</button> 
+    </div>
+    <br>
+    <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <form method="post">
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Main Department Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="MDEPT_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Small Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SMALL_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+                <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+
+      <div class="item">
+        <form>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Main Department Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><select id="dept">
+                                      <option value="Select">Select</option>
+                                    </select></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Sub Department Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SDEPT_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Small Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SMDEPT_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+    
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Main Designation</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="MDES_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Small Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SDES_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+     
+        <div class="item">
+        <form>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Main Deignation Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><select id="desgn">
+                                      <option value="Select">Select</option>
+                                    </select></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Sub Designation Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SDESG_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Small Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SMDESG_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+
+      <div class="item">
+        <form>
+            
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">Scale Number</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input type="number" id="SCALE_NO" name="RELIGION_NO" class="form-control" required="true"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">BASIC 1</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BASIC1" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                          <div class="form-group">
+                            <label class="col-md-4 control-label">INCREMENT 1</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="INCREMENT1" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">BASIC 2</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BASIC2" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">INCREMENT 2</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="INCREMENT2" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">BASIC 3</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BASIC3" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">INCREMENT 3</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="INCREMENT3" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">BASIC 4</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BASIC4" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">INCREMENT 4</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="INCREMENT4" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">BASIC 5</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BASIC5" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">INCREMENT 5</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="INCREMENT5" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Grade Pay</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="GP" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+                        
+    </form>
+      </div>
+    
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Staff</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="STAFF" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Level Of Qualification</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="QL" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Caste</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="CASTE" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+    
+      <div class="item">
+         <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Category</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="CAT" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+             <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+             <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                 </div>
+             </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Religion</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="RELIGION" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Appointment</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="APPOINTMENT" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+    
+      <div class="item">
+         <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Supplimentary Head</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SUP_HEAD" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+             <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+             <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                 </div>
+             </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Bank Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BNAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                            <div class="form-group">
+                            <label class="col-md-4 control-label">SMALL Bank Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SBNAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                             </div>
+                            <div class="form-group">
+                            <label class="col-md-4 control-label">Location</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="LOCATION" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+
+    </form>
+      </div>
+
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">City</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="City" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+    
+      <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Title</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="TITLE" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Transaction Type</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="TRANS_TYPE" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Nature Of Designation</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="NAT_DES" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Under College Short Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="UCSHORT_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                            <div class="form-group">
+                            <label class="col-md-4 control-label">Long Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="LONG_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">G.P.F Loan Head Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="GPF_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                            <div class="form-group">
+                            <label class="col-md-4 control-label">Short Loan Head Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="SLOAN_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                           <div class="form-group">
+                            <label class="col-md-4 control-label">Amount Deducted From Salary</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input type="checkbox" id="LOAN" name="LOAN" value="NO"><label for="NO_LOAN"> NO </label></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Staff Type</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="STAFF_TYPE" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+        <div class="item">
+        <form>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Bank Name Of Installment</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BANK_NAME" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                           <div class="form-group">
+                            <label class="col-md-4 control-label">Bank Code</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BANK_CODE" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                           <div class="form-group">
+                            <label class="col-md-4 control-label">Branch Name Of Bank</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BANK_BRANCH" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+                           <div class="form-group">
+                            <label class="col-md-4 control-label">Address Of Bank</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input name="BANK_ADDRESS" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                           </div>
+            <div class="form-group">
+                <div class="col-md-8 inputGroupContainer">
+            <button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+                </div>
+            </div>
+    </form>
+      </div>
+        
+<!--
+        <div class="item">
+        <img src="ny.jpg" alt="New york" style="width:100%;">
+      </div>
+-->
+<!--
+        <div class="footer form-group">
+        <div class="col-md-8 inputGroupContainer">
+	  		 	<button type="button" class="btn btn-warning spacing">Save</button>
+	  		 	<button type="button" class="btn btn-info spacing">Modify</button>
+	  		 	<button type="button" class="btn btn-info spacing">Cancel</button>
+	  		 	<button type="button" class="btn btn-info spacing">Print</button>
+	  		 	<button type="button" class="btn btn-info spacing">Exit</button>
+        </div>
+    </div>
+-->
+    </div>
+
+    <!-- Left and right controls -->
+<!--
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+-->
+  </div>
+</div>
+
+    <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("item");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Retire Employee</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+  <style type="text/css">
+    .header {
+  padding: 15px;
+  text-align: center;
+  background: #5F9EA0;
+  color: white;
+  font-size: 12px;
+
+}
+::-webkit-input-placeholder { 
+  color: red;
+}
+ #myInput {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+  }
+.href{
+   background-color:gray;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.date{
+  position: absolute;
+  top: -4px;
+}
+.b{
+  position: absolute;
+  left: 620px;
+  top: 200px;
+}
+.samplemain{
+                border: 1px solid green;  
+                min-height: 40px; 
+                margin: 2px; 
+                padding: 10px; 
+                min-width: 1000px; 
+                position:relative; 
+                font-size: 15px;
+}
+.main { 
+                border: 1px solid green;  
+                min-height: 450px; 
+                margin: 2px; 
+                padding: 10px; 
+                min-width: 1000px; 
+                position:relative; 
+                background-color: #D3D3D3;
+}
+/* Page Content */
+.boxed {
+  min-width: 10px
+}
+.staff {
+  background-color:powderblue ;
+}
+.exit{
+  position: absolute;
+  right:10px;
+  top: 30px;
+}
+.print{
+  position: absolute;
+  right:100px;
+  top: 30px;
+}
+.save{
+  position: absolute;
+  right:200px;
+  top: 30px;
+}
+.total{
+  position: absolute;
+  left: 20px;
+  top: 430px;
+  font-size: 15px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Find Retire Employee</h1>
+</div>
+ 
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+          <br>             
+          <label for="pay">List of employee from Staff</label>
+          <select id="pay" text-align: left;id="wgtmsr" style="width: 287px;" class="staff">
+            <option value="allstaff">All Staff   </option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+         </select>
+         <br>
+<li>
+         <p style="text-align:left;"> 
+        <label for="pay">who's date of retirement is within</label>
+<label for="pay"></label>
+<select id="pay" text-align: left;id="wgtmsr" style="width: 50px;">
+  <option value="volvo">3</option>
+  <option value="saab">5</option>
+  <option value="opel">8</option>
+  <option value="audi">9</option></li>
+</select></p>
+
+<li>
+          <label for="datepicker">from month</label>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><input class="date form-control" style="width: 100px" type="text" id="datepicker"></a></li> 
+</ul>
+     
+    <ul>
+     <p style="text-align:right;">
+     <class="nav navbar-nav navbar-right>
+      <button class="button"><li><a href="#"><span class="glyphicon glyphicon-user"></span> Show</a></li></button><br>
+      <button class="button"><li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li></button>
+    </p><ul>
+  </div>
+</nav>
+<div class="main">
+  <a href="#" class="b href">LIST</a>
+  <p class="total"><b>Total:</b></p>
+</div>
+<div class="samplemain">
+  <p>( Press F3 for Search ) </p>
+  <p>      
+       
+          <label for="pay">Appointment</label>
+          <select id="pay" text-align: left; id="wgtmsr" style="width: 150px;">
+            <option value="fpa">F.P.A </option>
+            <option value="hpa">H.P.A</option>
+            <option value="qpa">Q.P.A</option>
+         </select>
+         </p>
+  <a href="#" class="exit href">Exit</a>
+  <a href="#" class="print href">Print</a>
+  <a href="#" class="save href">Stop GPF</a>
+</div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+}); 
+</script>
+<script type="text/javascript">
+      $('#datepicker').datepicker({
+        format: "mm-yyyy",
+    viewMode: "months", 
+    minViewMode: "months"
+       });
+  </script>
+</body>
+</html>

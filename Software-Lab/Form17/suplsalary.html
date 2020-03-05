@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+        .carousel-control.left, .carousel-control.right {
+           background-image:none !important;
+           filter:none !important;
+        }
+        .center{
+          margin: auto;
+        }
+        .jumbotron{
+         width:70%;
+         height:70%;
+
+     }
+        body{
+            background-image: linear-gradient(to bottom right,grey, white);
+        }
+        
+        .spacing{
+            margin: 6px
+        }
+        .list-group{
+    max-height: 200px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+      </div>
+</nav>
+    
+<div class="container">
+    
+    <h2 style="text-align: center;color: white">Supplementary Salary</h2><br>
+  <div id="myCarousel" class="carousel slide jumbotron center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+   
+
+     
+    <div class="carousel-inner">
+      <div class="item active">  
+      
+        <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                           <div class="form-group">
+                            
+                            <label class="col-md-4 control-label">Employee Name</label>
+                               <div class="col-md-8 inputGroupContainer">
+
+                              <label><input type="radio" name="optradio" checked>Surname</label>
+                            
+                              <label><input type="radio" name="optradio">ID No.</label>
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                                  <span class="caret"></span></button>
+    
+                               <div class="form-group">
+                            </div></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Order No.</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="bankaccno" name="bankaccno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Pay</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="pfno" name="pfno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">D.P.</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="Pran No." name="pranno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Grade Pay:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Supl Pay:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Supl Bill:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                      </fieldset>
+                   </div>
+                </td>
+
+             </tr>
+          </tbody>
+        </table>
+      </div>
+        
+        <div class="item">
+        <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Supl. Bill Date</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="incrementdate" name="incrementdate" class="form-control" required="true" type="date"></div>
+                            </div>
+                         </div>
+                         
+                         
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Supl.Bill Head</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group">
+                                    <select style="margin:20px;" name="designationnature">
+                                        
+                                   </select>
+                                </div>
+                            </div>
+                         </div>
+                         
+    <div class="form-group">
+    <h5><b>INCOME</b></h5>
+  <ul class="list-group">
+    <li class="list-group-item">Dearness Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">House Rent Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">City Can.Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">Transport Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">washing Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">Special pay<span class="badge">0</span></li>
+    <li class="list-group-item">Special Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">Computer Allowance<span class="badge">0</span></li>
+    <li class="list-group-item">Annual Allowance<span class="badge">0</span></li>
+  </ul>
+  <div class="form-group">
+                            <label class="col-md-4 control-label">Income Total:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+</div>
+ 
+
+    <div class="form-group">
+    <h5><b>DEDUCTION</b></h5>
+  <ul class="list-group">
+    <li class="list-group-item">GPF Subscription<span class="badge">0</span></li>
+    <li class="list-group-item">GPF Additional<span class="badge">0</span></li>
+    <li class="list-group-item">GPF Advance<span class="badge">0</span></li>
+    <li class="list-group-item">Income tax<span class="badge">0</span></li>
+    <li class="list-group-item">Professional Tax<span class="badge">0</span></li>
+    <li class="list-group-item">LIC<span class="badge">0</span></li>
+    <li class="list-group-item">G.I.S.<span class="badge">0</span></li>
+    <li class="list-group-item">Staff club<span class="badge">0</span></li>
+    <li class="list-group-item">Licence fees<span class="badge">0</span></li>
+  </ul>
+  <div class="form-group">
+                            <label class="col-md-4 control-label">Deduction Total:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                            <div class="form-group">
+                            <label class="col-md-4 control-label">Net Income:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="panno" name="panno" placeholder="" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         </div>
+</div>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label">Do you want to add in income tax?</label>
+                          <br>
+                        <label><input type="checkbox" value="">Yes</label>
+                        <label><input type="checkbox" value="">No</label>
+                        
+                         
+                     
+                   </div>
+                  </fieldset>
+                </div>
+                </td>
+               
+             </tr>
+          </tbody>
+       </table>
+      </div>
+        <div class="item">
+        <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <div class="well form-horizontal">
+                      <fieldset>
+
+          <div class="form-group">
+  <label for="comment">Remark:</label>
+  <textarea class="form-control" rows="1" id="comment"></textarea>
+</div>
+
+        
+                         
+                         <button type="submit" class="btn btn-default spacing ">Submit</button>
+                       <button type="submit" class="btn btn-default spacing">Modify</button>
+                       <button type="submit" class="btn btn-default spacing">Cancel</button>
+                       <button type="submit" class="btn btn-default spacing">View</button>
+                       <button type="submit" class="btn btn-default spacing">Print</button>
+                       <button type="submit" class="btn btn-default spacing">Service Bank Entry</button>
+                       <button type="submit" class="btn btn-default spacing">Exit</button>
+
+                      </fieldset>
+                   </div>
+                </td>
+
+             </tr>
+          </tbody>
+       </table>
+      </div>
+    </div>
+      
+      
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
+
+<!--
+<button type="submit" class="btn btn-default spacing ">Submit</button>
+                       <button type="submit" class="btn btn-default spacing">Modify</button>
+                       <button type="submit" class="btn btn-default spacing">Cancel</button>
+                       <button type="submit" class="btn btn-default spacing">View</button>
+                       <button type="submit" class="btn btn-default spacing">Print</button>
+                       <button type="submit" class="btn btn-default spacing">Service Bank Entry</button>
+                       <button type="submit" class="btn btn-default spacing">Exit</button>-->
